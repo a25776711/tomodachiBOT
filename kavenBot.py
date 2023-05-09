@@ -12,18 +12,6 @@ bot = commands.Bot(command_prefix='k.')
 async def on_ready():
     print(f'目前登入身分:{bot.user}')
 
-@bot.event
-async def on_message(ctx):
-    if ctx.author == bot.user:
-        return
-    else:
-        temp=todo.save(ctx.author)
-        if todo.mch(ctx.content):
-            await ctx.channel.send("你好兇喔")
-        if temp:
-            await ctx.channel.send(f"喔 <@{ctx.author.id}>升級了")
-        await bot.process_commands(ctx)
-
 @bot.command()
 async def join(ctx):
     if ctx.author == bot.user:
@@ -35,7 +23,6 @@ async def join(ctx):
         await tmp.connect()
 @bot.command()
 async def lv(ctx):
-    print(ctx)
     await ctx.send(todo.lvch(ctx.author))
 @bot.command()
 async def leave(ctx):
@@ -56,5 +43,15 @@ async def hp(ctx):
 async def r(ctx):
     todo.save(ctx.author)
     await ctx.send(todo.helps())
-
+@bot.event
+async def on_message(ctx):
+    if ctx.author == bot.user:
+        return
+    if not ctx.content.startswith('k.'):
+        temp=todo.save(ctx.author)
+        if todo.mch(ctx.content):
+            await ctx.channel.send("你好兇喔")
+        if temp:
+            await ctx.channel.send(f"喔 <@{ctx.author.id}>升級了")
+    await bot.process_commands(ctx)
 bot.run(data['token'])

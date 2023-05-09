@@ -23,7 +23,7 @@ def lvch(user):
     level=temp['level']
     count=temp['saytime']-(level-1)*50
     ch=level*50
-    return f"你現在等級是:{level}\n經驗值還差:{count}/{ch}"
+    return f"<@{user.id}>現在等級是:{level}\n經驗值還差:{count}/{ch}"
         
 def save(user):
     try:
@@ -31,9 +31,13 @@ def save(user):
         count=temp['saytime']+1
     except:
         count=1
-    temp=data[f"{user}"]
-    levelc=temp['level']
-    level=levelch(count,levelc)
+    
+    try:
+        temp=data[f"{user}"]
+        levelc=temp['level']
+        level=levelch(count,levelc)
+    except:
+        level=[1,False]
     
     userdata = {
     f"{user}": {

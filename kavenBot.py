@@ -37,12 +37,12 @@ async def hi(ctx):
     await ctx.send(f"Hi <@{ctx.author.id}>")
 
 @bot.command()
-async def hp(ctx):
+async def helpme(ctx):
     await ctx.send(todo.helps())
 @bot.command()
-async def r(ctx):
+async def r(ctx,mes):
     todo.save(ctx.author)
-    await ctx.send(todo.helps())
+    await ctx.send(mes)
 @bot.event
 async def on_message(ctx):
     if ctx.author == bot.user:

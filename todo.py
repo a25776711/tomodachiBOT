@@ -1,10 +1,11 @@
 import json
+import re
 with open('data/userdata.json', 'r', encoding = "utf8") as f:
     data = json.load(f)
-mm={"幹你娘","去你的","操你媽","去你媽","靠北","我操"}
+mm=re.compile(r'(幹你娘|去你的|操你媽|去你媽|靠北|我操)')
     
 def helps():
-    return "```k.當開頭\n\njoin:加入所在語音頻道\nleave:叫他滾\nhi:跟他說hi\n好喔:好喔\n```||幹你娘:幹你娘||"
+    return "```k.當開頭\n\njoin:加入所在語音頻道\nleave:叫他滾\nhi:跟他說hi\nlv:查看經驗跟等級\n```"
 
 def levelch(count,level):
     if count <50:
@@ -16,8 +17,7 @@ def levelch(count,level):
             return level,False
         
 def mch(tx):
-    if tx in mm:
-        return True
+    return bool(mm.search(tx))
 def lvch(user):
     temp=data[f"{user}"]
     level=temp['level']

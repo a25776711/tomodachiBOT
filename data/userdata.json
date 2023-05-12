@@ -2,25 +2,25 @@
     "Aii#5098": {
         "id": "458123068573876285",
         "username": "Aii",
-        "saytime": 80,
+        "saytime": 96,
         "level": 2
     },
     "kaven#9626": {
         "id": "586509149387620352",
         "username": "kaven",
-        "saytime": 58,
+        "saytime": 84,
         "level": 2
     },
     "碧雪沁#5070": {
         "id": "468719069483368467",
         "username": "碧雪沁",
-        "saytime": 2,
+        "saytime": 31,
         "level": 1
     },
     "cOoKiE_bOx#7813": {
         "id": "371526999078076426",
         "username": "cOoKiE_bOx",
-        "saytime": 2,
+        "saytime": 10,
         "level": 1
     },
     "楓葉#8813": {
@@ -38,19 +38,31 @@
     "MEE6#4876": {
         "id": "159985870458322944",
         "username": "MEE6",
-        "saytime": 2,
+        "saytime": 5,
         "level": 1
     },
     "Yip#0125": {
         "id": "429624520488517632",
         "username": "Yip",
-        "saytime": 4,
+        "saytime": 12,
         "level": 1
     },
     "似乎有人#8445": {
         "id": "491595770189971469",
         "username": "似乎有人",
         "saytime": 2,
+        "level": 1
+    },
+    "錒默#3160": {
+        "id": "626437588298760192",
+        "username": "錒默",
+        "saytime": 19,
+        "level": 1
+    },
+    "OwO#8456": {
+        "id": "408785106942164992",
+        "username": "OwO",
+        "saytime": 1,
         "level": 1
     }
 }
